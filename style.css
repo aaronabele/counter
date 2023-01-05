@@ -3,15 +3,29 @@ html {
   box-sizing: border-box;
 }
 
+html,
 body {
   height: 100%;
+}
+
+body {
   margin: 0;
   display: grid;
-  grid-template-columns: 1;
+  grid-template-rows: auto 1fr;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(gold, gold);
+  background-size: var(--counter, 0%) 100%;
+  background-repeat: no-repeat;
+  transition: 0.25s background-size ease-in-out;
 }
 
 header {
-  background-color: orange;
+  background-color: gold;
 }
 
 .header-wrapper {
@@ -36,13 +50,6 @@ h1 {
   cursor: pointer;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /*Hintergrundverauf*/
-}
-
 p {
   margin: 0;
   padding: 0rem 1rem;
@@ -53,7 +60,6 @@ p {
 #zaehler {
   background-color: white;
   border: none;
-  font-size: 2rem;
-  outline: 1px solid red;
+  font-size: 10rem;
   cursor: pointer;
 }
