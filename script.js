@@ -33,6 +33,5 @@ btnReset.addEventListener("click", function (e) {
 document.addEventListener("keypress", function (e) {
   if (e.code === "Space" || e.code === "Enter") {
     increaseCounter();
-    resetCounter;
   }
 });
