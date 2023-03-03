@@ -44,27 +44,26 @@ const app = Vue.createApp({
       counter: 0,
     };
   },
+  created() {
+    this.enableSpaceAndEnterForIncrement();
+  },
+  computed: {
+    counterPercent() {
+      return this.counter % 100 === 0
+        ? this.counter + "%"
+        : (this.counter % 100) + "%";
+    },
+  },
   methods: {
     clickIncrement() {
       this.counter = this.counter + 1;
-
-      if (this.counter === 101) {
-        this.counter = 1;
-      }
-
-      const bgMain = document.querySelector("main");
-      bgMain.style.setProperty("--counter", this.counter + "%");
     },
-    resetCounter() {
+    resetCounter(e) {
+      e.stopPropagation();
       this.counter = 0;
-
-      const bgMain = document.querySelector("main");
-      bgMain.style.setProperty("--counter", 0 + "%");
     },
     enableSpaceAndEnterForIncrement() {
-      const docIncrement = document.querySelector("document");
-
-      docIncrement.addEventListener("keypress", (e) => {
+      document.documentElement.addEventListener("keypress", (e) => {
         if (e.code === "Space" || e.code === "Enter") {
           this.clickIncrement();
         }

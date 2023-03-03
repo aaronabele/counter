@@ -12,11 +12,11 @@
       <header>
         <div class="header-wrapper">
           <h1>Counter</h1>
-          <button id="reset" @click="resetCounter">Reset</button>
+          <button id="reset" @click="resetCounter($event)">Reset</button>
         </div>
         <p>(click the white area or hit space / enter to count)</p>
       </header>
-      <main class="bg-main">
+      <main class="bg-main" :style="{'--counter' : counterPercent}">
         <span id="zaehler" @click="clickIncrement"> {{ counter }} </span>
       </main>
     </div>
