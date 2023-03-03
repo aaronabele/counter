@@ -8,16 +8,19 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <div class="header-wrapper">
-        <h1>Counter</h1>
-        <button id="reset">Reset</button>
-      </div>
-      <p>(click the white area or hit space / enter to count)</p>
-    </header>
-    <main>
-      <span id="zaehler">0</span>
-    </main>
+    <div id="app">
+      <header>
+        <div class="header-wrapper">
+          <h1>Counter</h1>
+          <button id="reset" @click="resetCounter">Reset</button>
+        </div>
+        <p>(click the white area or hit space / enter to count)</p>
+      </header>
+      <main class="bg-main">
+        <span id="zaehler" @click="clickIncrement"> {{ counter }} </span>
+      </main>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
